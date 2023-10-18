@@ -1,0 +1,37 @@
+controllers: serve para criar rotas, nao esquecer de adicionar os controllers ao app.Module
+            connectam ao services para usar as funcoes
+            A funcao do controllador é so chamar as funcoes do servico do controllador
+
+services: onde se criam as funcoes 
+
+Pasta dto: serve para filtrar e verificar todos os tipos de dados que passam do controller para o service (body)
+
+
+
+///////////ERROS////////////
+
+ERRO:
+ERROR [ExceptionsHandler] No metadata for "Veiculo" was found.
+Solução:
+adicionar a entidade no ficheiro app.module.ts -> entities: [User,Login,Permissao,Veiculo],
+
+para proteger as rotas com o jwt por este decorador @UseGuards(AuthGuard('jwt'))
+
+
+ESTADOS DA RESERVA: Invalida -----> Valida ------------> EmUso ------> Finalizada
+                            (pagar)       (Quando entrar)             (Quando Sair/verificar se tem multa)
+
+REGRAS de negocio :
+
+nos movimentos com registo (verificar se o parque é privado depois, puxar o id do utilizador e 
+verificar se ele tem uma reserva com o estado "Valida", 
+nas reservas !!!Validas!!! do utilizador encontrar comprar o parqueID com ParqueID da reserva e ve se são iguais
+se tem alguma reserva valida para aquela data se tiver poe a reserva 
+no estado "EmUso" e permite acesso ao parque ) 
+
+
+Algortimo Pagamento: 
+
+1º Quando fizer reserva, criar funcao para atribuir pagamento para a reserva
+2º Pagar Reserva - Comparar valor pago ao valor da reserva e este serem iguais se na otiverem da erro, depois do valor estar igual fazer update ao estado da reserva.
+

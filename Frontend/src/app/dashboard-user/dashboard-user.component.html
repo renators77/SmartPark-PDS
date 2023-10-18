@@ -1,0 +1,117 @@
+<div class="flex h-screen bg-sky-300">
+  <div class="flex flex-col top-15 left-0 w-1/5 bg-white h-full h-screen border-r">
+    <div class="overflow-y-auto overflow-x-hidden flex-grow">
+      <ul class="flex flex-col py-4 space-y-1">
+        <li>
+          <a (click)="goToPage('Dashboard-user')"
+            class="bg-zinc-200 cursor-pointer relative cursor-pointer flex flex-row items-center h-11 focus:outline-none text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+            <span class="inline-flex justify-center items-center ml-4">
+              <img src="../../assets/imgs/home.svg" class="w-5 h-5">
+            </span>
+            <span class="ml-5 text-sm tracking-wide truncate">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a (click)="goToPage('LugaresDisponiveis')"
+            class="relative cursor-pointer flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+            <span class="inline-flex justify-center items-center ml-4">
+              <img src="../../assets/imgs/lugares.svg" class="w-5 h-5">
+            </span>
+            <span class="ml-5 text-sm tracking-wide truncate">Lugares Disponíveis</span>
+          </a>
+        </li>
+        <li>
+          <a (click)="goToPage('Reservas')"
+            class="relative cursor-pointer flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+            <span class="inline-flex justify-center items-center ml-4">
+              <img src="../../assets/imgs/calendar.svg" class="w-5 h-5">
+            </span>
+            <span class="ml-5 text-sm tracking-wide truncate">Reservar Lugar</span>
+          </a>
+        </li>
+        <li>
+          <a (click)="goToPage('Veiculos')"
+            class="relative cursor-pointer flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+            <span class="inline-flex justify-center items-center ml-4">
+              <img src="../../assets/imgs/car.svg" class="w-5 h-5">
+            </span>
+            <span class="ml-5 text-sm tracking-wide truncate">Veiculos</span>
+          </a>
+        </li>
+        <li>
+          <a (click)="goToPage('Estatisticas')"
+            class="relative cursor-pointer flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+            <span class="inline-flex justify-center items-center ml-4">
+              <img src="../../assets/imgs/stats.svg" class="w-5 h-5">
+            </span>
+            <span class="ml-5 text-sm tracking-wide truncate">Estatisticas</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="flex flex-col flex-1 w-full bg-cyan-300">
+    <main>
+      <div class="grid mb-4 pb-10 px-8 rounded-3xl">
+        <section class="bg-cyan-300">
+          <div class="py-8 px-4 mx-auto max-w-screen-xl">
+            <div class="bg-gray-50 border rounded-lg p-6 mb-8">
+              <h1 class="text-gray-900 text-3xl font-bold mb-2 text-center">Bem vindo User, o que te traz por aqui?</h1>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+              <div class="bg-gray-50 rounded-lg p-8 md:p-12">
+                <h2 class="text-gray-900 text-2xl font-bold mb-2">Lugares Disponiveis</h2>
+                <p class="text-lg font-normal text-gray-500 mb-4">Queres estacionar num dos parques livres e desejas ver
+                  a lotação destes? </p>
+                <a (click)="goToPage('LugaresDisponiveis')"
+                  class="text-blue-600 hover:underline font-medium text-lg inline-flex items-center">Entrar
+                  <svg aria-hidden="true" class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </a>
+              </div>
+              <div class="bg-gray-50 border rounded-lg p-8 md:p-12">
+                <h2 class="text-gray-900 text-2xl font-bold mb-2">Reservar Lugar</h2>
+                <p class="text-lg font-normal text-gray-500 mb-4">Queres estacionar no parque privado e reservar já o
+                  teu lugar?</p>
+                <a (click)="goToPage('Reservas')"
+                  class="text-blue-600 hover:underline font-medium text-lg inline-flex items-center">Entrar
+                  <svg aria-hidden="true" class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </a>
+              </div>
+              <div class="bg-gray-50 border rounded-lg p-8 md:p-12">
+                <h2 class="text-gray-900 text-2xl font-bold mb-2">Veiculos</h2>
+                <p class="text-lg font-normal text-gray-500 mb-4">Queres adicionar ou remover algum veículo ao teu
+                  perfil?</p>
+                <a (click)="goToPage('Veiculos')"
+                  class="text-blue-600 hover:underline font-medium text-lg inline-flex items-center">Entrar
+                  <svg aria-hidden="true" class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </a>
+              </div>
+              <div class="bg-gray-50 border rounded-lg p-8 md:p-12">
+                <h2 class="text-gray-900 text-2xl font-bold mb-2">Estatisticas</h2>
+                <p class="text-lg font-normal text-gray-500 mb-4">Queres consultar as tuas estatisticas no SmartPark?
+                </p>
+                <a (click)="goToPage('Estatisticas')"
+                  class="text-blue-600 hover:underline font-medium text-lg inline-flex items-center">Entrar
+                  <svg aria-hidden="true" class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>

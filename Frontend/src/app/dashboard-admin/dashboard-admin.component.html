@@ -1,0 +1,85 @@
+<div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased text-gray-800">
+  <div class="bg-cyan-300 w-5/6 h-96 absolute right-0">
+    <h1 class="text-center mt-10 text-white text-3xl font-bold">Dashboard Admin</h1>
+    <div class="bg-white w-44 h-24 absolute ml-[4%] mt-20 rounded-2xl">
+      <h1 class="text-center mt-3.5 font-bold">Movimentos</h1>
+      <p class="text-center text-xl mt-3">{{getMovimentos | json}}</p>
+    </div>
+    <div class="bg-white w-44 h-24 absolute ml-[24%] mt-20 rounded-2xl">
+      <h1 class="text-center mt-3.5 font-bold">Utilizadores</h1>
+      <p class="text-center text-xl mt-3">{{getUsers | json}}</p>
+    </div>
+    <div class="bg-white w-44 h-24 absolute ml-[44%] mt-20 rounded-2xl">
+      <h1 class="text-center mt-3.5 font-bold">Reservas</h1>
+      <p class="text-center text-xl mt-3">{{getReservas | json}}</p>
+    </div>
+    <div class="bg-white w-44 h-24 absolute ml-[64%] mt-20 rounded-2xl">
+      <h1 class="text-center mt-3.5 font-bold">Multas</h1>
+      <p class="text-center text-xl mt-3">{{getMultas | json}}</p>
+    </div>
+    <div class="bg-white w-44 h-24 absolute ml-[84%] mt-20 rounded-2xl">
+      <h1 class="text-center mt-3.5 font-bold">Veiculos</h1>
+      <p class="text-center text-xl mt-3">{{getVeiculos | json}}</p>
+    </div>
+  </div>
+  <div class="flex flex-col top-15 left-0 w-1/6 bg-white h-full h-screen border-r">
+    <div class="overflow-y-auto overflow-x-hidden flex-grow">
+      <ul class="flex flex-col py-4 space-y-1">
+        <li>
+          <a (click)="goToPage('Dashboard-admin')"
+            class="bg-zinc-200 cursor-pointer relative flex flex-row items-center h-11 focus:outline-none text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+            <span class="inline-flex justify-center items-center ml-4">
+              <img src="../../assets/imgs/home.svg" class="w-5 h-5">
+            </span>
+            <span class="ml-5 text-sm tracking-wide truncate">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a (click)="goToPage('Alertas-da')"
+            class="cursor-pointer relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+            <span class="inline-flex justify-center items-center ml-4">
+              <img src="../../assets/imgs/alert-triangle.svg" class="w-5 h-5">
+            </span>
+            <span class="ml-5 text-sm tracking-wide truncate">Multas</span>
+          </a>
+        </li>
+        <li>
+          <a (click)="goToPage('Reservas-da')"
+            class="cursor-pointer relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+            <span class="inline-flex justify-center items-center ml-4">
+              <img src="../../assets/imgs/calendar.svg" class="w-5 h-5">
+            </span>
+            <span class="ml-5 text-sm tracking-wide truncate">Reservas</span>
+          </a>
+        </li>
+        <li>
+          <a (click)="goToPage('Utilizadores')"
+            class="cursor-pointer relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+            <span class="inline-flex justify-center items-center ml-4">
+              <img src="../../assets/imgs/user.svg" class="w-5 h-5">
+            </span>
+            <span class="ml-5 text-sm tracking-wide truncate">Utilizadores</span>
+          </a>
+        </li>
+        <li>
+          <a (click)="goToPage('Veiculos-da')"
+            class="cursor-pointer relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+            <span class="inline-flex justify-center items-center ml-4">
+              <img src="../../assets/imgs/car.svg" class="w-5 h-5">
+            </span>
+            <span class="ml-5 text-sm tracking-wide truncate">Veículos</span>
+          </a>
+        </li>
+        <li>
+          <a (click)="goToPage('Parques')"
+            class="cursor-pointer relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+            <span class="inline-flex justify-center items-center ml-4">
+              <img src="../../assets/imgs/map-pin.svg" class="w-5 h-5">
+            </span>
+            <span class="ml-5 text-sm tracking-wide truncate">Parques</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="fixed text-center top-1/4 left-[35%] w-96 h-96 bg-white p-5 drop-shadow-2xl">
+  <h2 class="text-2xl font-bold text-center mb-[5%]">
+    Adicionar um novo parque
+  </h2>
+  <form class="flex flex-col" (ngSubmit)="postMethod()">
+    <label class="mb-[3%]" for="LugaresDisponiveis">Lugares Disponíveis</label>
+    <input class="p-1 mb-2.5 border border-black rounded-md" [(ngModel)]="LugaresDisponiveis"
+      name="LugaresDisponiveis" />
+
+    <label class="mb-[3%]" for="LugaresTotal">Total Lugares</label>
+    <input class="p-1 mb-2.5 border border-black rounded-md" [(ngModel)]="LugaresTotal" name="LugaresTotal" />
+
+    <label class="mb-[3%]" for="LugaresTotal">Tipo Parque</label>
+    <select
+      class="bg-gray-50 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-black block w-full p-2.5 "
+      [(ngModel)]="typeParque" name="typeParque">
+      <option [value]="1">publico</option>
+      <option [value]="2">privado</option>
+    </select>
+
+    <button
+      class="py-2.5 px-5 bg-blue-500 hover:bg-blue-600 text-white border-none rounded-md cursor-pointer w-3/5 absolute right-[5%] bottom-[3%]"
+      type="submit">
+      Registar
+    </button>
+    <button
+      class="py-2.5 px-5 bg-red-600 hover:bg-red-700 text-white border-none rounded-md cursor-pointer w-1/4 absolute left-[5%] bottom-[3%]"
+      (click)="closeAPopup()">
+      Fechar
+    </button>
+  </form>
+</div>

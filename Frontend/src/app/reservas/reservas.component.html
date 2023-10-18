@@ -1,0 +1,132 @@
+<div class="flex h-screen bg-sky-300">
+  <div class="flex flex-col top-15 left-0 w-1/5 bg-white h-full h-screen border-r">
+    <div class="overflow-y-auto overflow-x-hidden flex-grow">
+      <ul class="flex flex-col py-4 space-y-1">
+        <li>
+          <a (click)="goToPage('Dashboard-user')"
+            class="relative cursor-pointer flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+            <span class="inline-flex justify-center items-center ml-4">
+              <img src="../../assets/imgs/home.svg" class="w-5 h-5" />
+            </span>
+            <span class="ml-5 text-sm tracking-wide truncate">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a (click)="goToPage('LugaresDisponiveis')"
+            class="relative cursor-pointer flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+            <span class="inline-flex justify-center items-center ml-4">
+              <img src="../../assets/imgs/lugares.svg" class="w-5 h-5" />
+            </span>
+            <span class="ml-5 text-sm tracking-wide truncate">Lugares Disponíveis</span>
+          </a>
+        </li>
+        <li>
+          <a (click)="goToPage('Reservas')"
+            class="bg-zinc-200 cursor-pointer relative cursor-pointer flex flex-row items-center h-11 focus:outline-none text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+            <span class="inline-flex justify-center items-center ml-4">
+              <img src="../../assets/imgs/calendar.svg" class="w-5 h-5" />
+            </span>
+            <span class="ml-5 text-sm tracking-wide truncate">Reservar Lugar</span>
+          </a>
+        </li>
+        <li>
+          <a (click)="goToPage('Veiculos')"
+            class="relative cursor-pointer flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+            <span class="inline-flex justify-center items-center ml-4">
+              <img src="../../assets/imgs/car.svg" class="w-5 h-5" />
+            </span>
+            <span class="ml-5 text-sm tracking-wide truncate">Veiculos</span>
+          </a>
+        </li>
+        <li>
+          <a (click)="goToPage('Estatisticas')"
+            class="relative cursor-pointer flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+            <span class="inline-flex justify-center items-center ml-4">
+              <img src="../../assets/imgs/stats.svg" class="w-5 h-5" />
+            </span>
+            <span class="ml-5 text-sm tracking-wide truncate">Estatisticas</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="flex flex-col flex-1 w-full bg-cyan-300">
+    <div class="grid mb-4 mt-4 pb-10 px-8 mx-8 rounded-3xl bg-gray-100">
+      <h2 class="mt-5 mb-5 text-center text-2xl font-bold text-cyan-400">Reservar Lugar</h2>
+      <form>
+        <div class="grid md:grid-cols-2 md:gap-6">
+          <div class="relative z-0 w-full mb-6 group">
+            <h2 class="font-bold mb-2">Data de entrada</h2>
+            <label for="date">Dia:</label>
+            <input class="ml-4 mb-8" type="date" id="date" [(ngModel)]="selectedDateEntrada" name="selectedDateEntrada" />
+
+            <label class="ml-16" for="time">Hora:</label>
+            <input class="ml-4" type="time" id="time" [(ngModel)]="selectedTimeEntrada" name="selectedTimeEntrada" />
+
+            <h2 class="font-bold mb-2">Carro:</h2>
+            <select
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              [(ngModel)]="selectedVeiculo" name="selectedVeiculo">
+              <option *ngFor="let veiculo of veiculos" [value]="veiculo.VeiculoID">{{veiculo.ValorMatricula}}</option>
+
+            </select>
+          </div>
+          <div class="relative z-0 w-full mb-6 group">
+            <h2 class="font-bold mb-2">Data de saida</h2>
+            <label for="date">Dia:</label>
+            <input class="ml-4 mb-8" type="date" id="date" [(ngModel)]="selectedDateSaida" name="selectedDateSaida" />
+
+            <label class="ml-16" for="time">Hora:</label>
+            <input class="ml-4" type="time" id="time" [(ngModel)]="selectedTimeSaida" name="selectedTimeSaida" />
+
+            <h2 class="font-bold mb-2">Parque:</h2>
+            <select
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              [(ngModel)]="selectedParque" name="selectedParque">
+              <option *ngFor="let parque of parques" [value]="parque.ParqueID">
+                {{ parque.ParqueID }}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit"
+          class="text-white bg-cyan-500 hover:bg-cyan-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+          (click)="fazerReserva()">
+          Reservar
+        </button>
+      </form>
+      <h2 class="text-center text-2xl font-bold text-cyan-400 mt-5 mb-5">As minhas reservas</h2>
+
+      <div class="relative shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left text-gray-500">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+            <tr>
+              <th scope="col" class="px-6 py-3">Nº Reserva</th>
+              <th scope="col" class="px-6 py-3">Data Inicio</th>
+              <th scope="col" class="px-6 py-3">Data Fim</th>
+              <th scope="col" class="px-6 py-3">Veiculo ID</th>
+              <th scope="col" class="px-6 py-3">Parque ID</th>
+              <th scope="col" class="px-6 py-3">Valor Reserva</th>
+              <th scope="col" class="px-6 py-3">Estado Reserva</th>
+              <th scope="col" class="px-6 py-3">Multa ID</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-white border-b hover:bg-gray-50" *ngFor="let reserva of reservas">
+              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"> {{reserva.ReservaID}} </th>
+              <td class="px-6 py-4">{{reserva.DataInicio | date: 'dd-MM-yyyy HH:mm' }}</td>
+              <td class="px-6 py-4">{{reserva.DataFim | date: 'dd-MM-yyyy HH:mm' }}</td>
+              <td class="px-6 py-4">{{reserva.VeiculoID}}</td>
+              <td class="px-6 py-4">{{reserva.ParqueID}}</td>
+              <td class="px-6 py-4">{{reserva.ValorReserva}}</td>
+              <td class="px-6 py-4">{{reserva.EstadoReserva}}</td>
+              <td class="px-6 py-4">{{reserva.MultaId}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

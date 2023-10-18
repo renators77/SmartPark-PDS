@@ -1,0 +1,92 @@
+<div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased text-gray-800">
+    <div class="bg-cyan-300 w-5/6 h-96 absolute right-0">
+      <h1 class="text-center mt-10 text-white text-3xl font-bold">Reservas</h1>
+
+      <form class="ml-[10%] mt-[3%]" action="/action_page.php">
+        <label for="birthday">Data:</label>
+        <input class="ml-[1%]" type="date" id="data">
+        <input type="submit" class="bg-transparent border border-black ml-[2%] pt-px px-2 rounded-md cursor-pointer">
+      </form>
+      
+      <div class="flex justify-center items-center mt-[3%]">  
+        <table class="w-4/5 rounded-lg overflow-hidden bg-white">
+          <tr class="h-16 p-5 bg-cyan-100 border-b-cyan-300 border-b">
+            <th class="border-r border-r-cyan-300">Nº Reserva</th>
+            <th class="border-r border-r-cyan-300">Data Inicio</th>
+            <th class="border-r border-r-cyan-300">Data Fim</th>
+            <th class="border-r border-r-cyan-300">Valor Reserva</th>
+            <th class="border-r border-r-cyan-300">Login ID</th>
+            <th class="border-r border-r-cyan-300">Multa ID</th>
+            <th class="border-r border-r-cyan-300">Parque ID</th>
+            <th class="border-r border-r-cyan-300">Estado Reserva</th>
+            <th class="border-r border-r-cyan-300">Veiculo ID</th>
+          </tr>
+          <tr class="border-b-cyan-300 border-b text-center" *ngFor="let reserva of reservas">
+            <td class="p-2 border-r border-r-cyan-300">{{reserva.ReservaID }}</td>
+            <td class="border-r border-r-cyan-300">{{reserva.DataInicio | date: 'dd-MM-yyyy HH:mm' }}</td>
+            <td class="border-r border-r-cyan-300">{{reserva.DataFim | date: 'dd-MM-yyyy HH:mm' }}</td>
+            <td class="border-r border-r-cyan-300">{{reserva.ValorReserva }}</td>
+            <td class="border-r border-r-cyan-300">{{reserva.LoginId }}</td>
+            <td class="border-r border-r-cyan-300">{{reserva.MultaId }}</td>
+            <td class="border-r border-r-cyan-300">{{reserva.ParqueID }}</td>
+            <td class="border-r border-r-cyan-300">{{reserva.EstadoReserva }}</td>
+            <td class="border-r border-r-cyan-300">{{reserva.VeiculoID }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="flex flex-col top-15 left-0 w-1/6 bg-white h-full h-screen border-r">
+      <div class="overflow-y-auto overflow-x-hidden flex-grow">
+        <ul class="flex flex-col py-4 space-y-1">
+          <li>
+            <a (click)="goToPage('Dashboard-admin')" class="cursor-pointer relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+              <span class="inline-flex justify-center items-center ml-4">
+               <img src="../../assets/imgs/home.svg" class="w-5 h-5">
+              </span>
+              <span class="ml-5 text-sm tracking-wide truncate">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a (click)="goToPage('Alertas-da')" class="cursor-pointer relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+              <span class="inline-flex justify-center items-center ml-4">
+               <img src="../../assets/imgs/alert-triangle.svg" class="w-5 h-5">
+              </span>
+              <span class="ml-5 text-sm tracking-wide truncate">Multas</span>
+            </a>
+          </li>
+          <li>
+            <a (click)="goToPage('Reservas-da')" class="bg-zinc-200 cursor-pointer relative flex flex-row items-center h-11 focus:outline-none text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+              <span class="inline-flex justify-center items-center ml-4">
+               <img src="../../assets/imgs/calendar.svg" class="w-5 h-5">
+              </span>
+              <span class="ml-5 text-sm tracking-wide truncate">Reservas</span>
+            </a>
+          </li>
+          <li>
+            <a (click)="goToPage('Utilizadores')" class="cursor-pointer relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+              <span class="inline-flex justify-center items-center ml-4">
+                <img src="../../assets/imgs/user.svg" class="w-5 h-5">
+              </span>
+              <span class="ml-5 text-sm tracking-wide truncate">Utilizadores</span>
+            </a>
+          </li>
+          <li>
+            <a (click)="goToPage('Veiculos-da')" class="cursor-pointer relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+             <span class="inline-flex justify-center items-center ml-4">
+               <img src="../../assets/imgs/car.svg" class="w-5 h-5">
+             </span>
+             <span class="ml-5 text-sm tracking-wide truncate">Veículos</span>
+            </a>
+          </li>
+          <li>
+            <a (click)="goToPage('Parques')" class="cursor-pointer relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+              <span class="inline-flex justify-center items-center ml-4">
+               <img src="../../assets/imgs/map-pin.svg" class="w-5 h-5">
+              </span>
+              <span class="ml-5 text-sm tracking-wide truncate">Parques</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>

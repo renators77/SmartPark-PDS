@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./registar.component.css" />
+</head>
+
+<body>
+  <section>
+    <div class="container h-full p-10 marginCentre">
+      <div class="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800">
+        <div class="w-full">
+          <div class="block rounded-lg bg-white shadow-lg">
+            <div class="g-0 lg:flex lg:flex-wrap">
+              <div class="px-4 md:px-0 lg:w-6/12">
+                <div class="md:mx-6 md:p-12">
+                  <form>
+                    <div class="mb-6">
+                      <label
+                        class="block mb-2 text-sm font-medium text-gray-900">Username</label>
+                      <div class="relative">
+                        <input type="text"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                          required
+                          [(ngModel)]="Username" name="Username"/>
+                      </div>
+                    </div>
+
+                    <div class="mb-6">
+                      <label
+                        class="block mb-2 text-sm font-medium text-gray-900">Nome</label>
+                      <div class="relative">
+                        <input type="text"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                          required
+                          [(ngModel)]="Nome" name="Nome"/>
+                      </div>
+                    </div>
+
+                    
+                    <div class="mb-6">
+                      <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Password</label>
+                      <input type="password" id="password"
+                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                        required 
+                        [(ngModel)]="Password" name="Password"/>
+                    </div>
+                    
+                    <div class="mb-6">
+                      <label
+                        class="block mb-2 text-sm font-medium text-gray-900">Rua</label>
+                      <div class="relative">
+                        <input type="text"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                          [(ngModel)]="Rua" name="Rua"/>
+                      </div>
+                    </div>
+
+                    <button type="submit"
+                      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                      (click)="postMethod()"
+                      >
+                      Registar nova conta
+                    </button>
+                  </form>
+                </div>
+              </div>
+              <div class="flex items-center rounded-b-lg lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none"
+                style="background-color: #02aeee">
+                <div class="px-4 py-6 text-white md:mx-6 md:p-12">
+                  <h4 class="mb-6 text-xl font-semibold">Regista-te já!</h4>
+                  <p class="text-sm">
+                    Insira todos os dados para começarmos a adicionar veiculos
+                    ao seu perfil.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

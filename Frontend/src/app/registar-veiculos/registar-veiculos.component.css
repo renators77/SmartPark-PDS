@@ -1,0 +1,11 @@
+.marginCentre {
+    margin: 0 auto;
+    width: 90%;
+    padding: 5%;
+  }
+
+  .Reservar{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: large;
+}

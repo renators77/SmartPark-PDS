@@ -1,0 +1,52 @@
+<div class="container h-full p-10 marginCentre">
+  <div class="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800">
+    <div class="w-full">
+      <div class="block rounded-lg bg-white shadow-lg">
+        <div class="">
+          <div class="md:mx-6 md:p-12">
+            <div class="">
+              <div class="">
+                <form>
+                  <h2 class="Reservar">Aqui estão os seus veiculos ja registados</h2>
+                  <table class="w-full text-sm text-left text-gray-500">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                      <tr>
+                        <th scope="col" class="px-6 py-3">
+                          Matricula
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                          <span class="sr-only">Cancelar</span>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="bg-white border-b hover:bg-gray-50" *ngFor="let veiculo of veiculos ">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                          {{veiculo.ValorMatricula}}
+                        </th>
+                      </tr>
+                    </tbody>
+          
+                  </table>
+                  <div class="mb-6">
+                    <label class="block mb-2 text-sm font-medium text-gray-900">Insira aqui a sua matricula</label>
+                    <input type="text" id="ValorMatricula"
+                      [(ngModel)]="matricula" name="matricula"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                      placeholder="##-##-##" required />
+                  </div>
+                  <button type="submit"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center" 
+                    (click)="postMethod()"
+                    >
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

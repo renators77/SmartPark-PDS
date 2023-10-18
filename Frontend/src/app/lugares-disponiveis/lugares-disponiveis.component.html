@@ -1,0 +1,75 @@
+<div class="flex">
+  <div class="flex flex-col top-15 left-0 w-1/5 bg-white h-full h-screen border-r">
+    <div class="overflow-y-auto overflow-x-hidden flex-grow">
+      <ul class="flex flex-col py-4 space-y-1">
+        <li>
+          <a (click)="goToPage('Dashboard-user')" class="relative cursor-pointer flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+            <span class="inline-flex justify-center items-center ml-4">
+             <img src="../../assets/imgs/home.svg" class="w-5 h-5">
+            </span>
+            <span class="ml-5 text-sm tracking-wide truncate">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a (click)="goToPage('LugaresDisponiveis')" class="bg-zinc-200 cursor-pointer relative cursor-pointer flex flex-row items-center h-11 focus:outline-none text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+            <span class="inline-flex justify-center items-center ml-4">
+             <img src="../../assets/imgs/lugares.svg" class="w-5 h-5">
+            </span>
+            <span class="ml-5 text-sm tracking-wide truncate">Lugares Disponíveis</span>
+          </a>
+        </li>
+        <li>
+          <a (click)="goToPage('Reservas')" class="relative cursor-pointer flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+            <span class="inline-flex justify-center items-center ml-4">
+             <img src="../../assets/imgs/calendar.svg" class="w-5 h-5">
+            </span>
+            <span class="ml-5 text-sm tracking-wide truncate">Reservar Lugar</span>
+          </a>
+        </li>
+        <li>
+          <a (click)="goToPage('Veiculos')" class="relative cursor-pointer flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+            <span class="inline-flex justify-center items-center ml-4">
+              <img src="../../assets/imgs/car.svg" class="w-5 h-5">
+            </span>
+            <span class="ml-5 text-sm tracking-wide truncate">Veiculos</span>
+          </a>
+        </li>
+        <li>
+          <a (click)="goToPage('Estatisticas')" class="relative cursor-pointer flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-blue-300 pr-6">
+           <span class="inline-flex justify-center items-center ml-4">
+             <img src="../../assets/imgs/stats.svg" class="w-5 h-5">
+           </span>
+           <span class="ml-5 text-sm tracking-wide truncate">Estatisticas</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="flex flex-col flex-1 w-full bg-cyan-300">
+    <div class="grid mb-4 mt-4 pb-10 px-8 mx-8 rounded-3xl bg-white">
+      <div class="ml-[13%] grid grid-cols-14 gap-6">
+
+        <img class="mt-8 w-5/6" src="assets/imgs/homeImage.png" alt="Architecture" height="800">
+
+        <table class="w-5/6 rounded-lg overflow-hidden bg-white">
+          <tr class="h-16 p-5 bg-cyan-100 border-b-cyan-300 border-b">
+            <th class="border-r border-r-cyan-300"></th>
+            <th class="border-r border-r-cyan-300">Lugares Livres</th>
+            <th class="border-r border-r-cyan-300">Total Lugares</th>
+            <th>Ocupação</th>
+          </tr>
+          <tr class="border-b-cyan-300 border-b text-center" *ngFor="let parque of parques">
+            <td class="p-2 border-r border-r-cyan-300">{{parque.ParqueID}}</td>
+            <td class="border-r border-r-cyan-300">{{parque.LugaresDisponiveis}}</td>
+            <td class="border-r border-r-cyan-300">{{parque.LugaresTotal}}</td>
+            <td>{{(parque.LugaresDisponiveis / parque.LugaresTotal) * 100 }}</td>
+
+          </tr>
+
+
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
